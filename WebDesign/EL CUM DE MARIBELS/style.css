@@ -1,0 +1,162 @@
+* {
+  min-width: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* styles */
+/* TODO: Cambiar la fuente
+
+* {
+  font-family: comic-sans;
+} */
+
+body {
+  background-color: #ffff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-letter {
+  position: relative;
+}
+
+.cover {
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 100px solid #B49513;
+  border-bottom: 100px solid transparent;
+
+  /*  */
+  transition: transform .75s;
+  transform-origin: top;
+}
+
+.paper {
+  position: absolute;
+  padding: 1.5rem;
+  line-height: 2rem;
+  right: 5px;
+  /*  */
+  z-index: -1;
+  background: white;
+  width: 390px;
+  height: 180px;
+
+  transition: all .75s;
+}
+
+.letter {
+  border-left: 200px solid #D5B121;
+  border-right: 200px solid #D5B121;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid #CDAA1B;
+}
+
+.options {
+  display: flex;
+  gap: 5rem;
+
+  & button {
+    color: white;
+    font-weight: 600;
+    border-radius: 3px;
+    background: #B49513;
+    padding: 0.5rem 1rem;
+    border: 1px solid #B49513 ;
+    cursor: pointer;
+  }
+
+  & button:hover {
+    background: #D5B121;
+    color: white;
+  }
+}
+
+.open-cover {
+  transform: rotatex(180deg);
+}
+
+.open-paper {
+  animation: openPaper .5s forwards;
+}
+
+@keyframes openPaper {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -120px;
+  }
+}
+
+.close-paper {
+  animation: closePaper .5s forwards;
+}
+
+@keyframes closePaper {
+  0% {
+    top: -120px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+
+.heart {
+  display: none; /* Oculta el elemento inicialmente */
+  position: absolute; /* Posiciona el elemento de manera absoluta respecto a su contenedor */
+  top: 25%; /* Sitúa el elemento al 25% desde la parte superior del contenedor */
+  left: 46.5%; /* Sitúa el elemento al 46.5% desde la parte izquierda del contenedor */
+  margin: auto; /* Aplica un margen automático, centrando el elemento horizontalmente si es posible */
+  font-size: 3rem; /* Establece el tamaño de la fuente en 3rem (3 veces el tamaño de fuente raíz) */
+  color: #FFD700; /* Define el color del texto como amarillo dorado */
+  animation: crecer 1s forwards; /* Aplica una animación llamada "crecer" que dura 1 segundo y mantiene el estado final de la animación */
+}
+
+@keyframes crecer {
+  0% {
+    transform: scale(0); /* Comienza con un tamaño de escala 0 (invisible) */
+  }
+  100% {
+    transform: scale(1); /* Termina con un tamaño de escala 1 (su tamaño original) */
+  }
+}
